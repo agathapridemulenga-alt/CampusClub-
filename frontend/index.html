@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Club Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            background: #f4f6f9;
+            color: #222;
+        }
+        h1 { color: #174a7e; }
+        form, .table-container {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        input, textarea, button {
+            padding: 10px;
+            margin: 5px 0;
+            box-sizing: border-box;
+        }
+        input, textarea {
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            background: #174a7e;
+            color: white;
+        }
+        .delete { background: #b42318; }
+        .edit { background: #16794b; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th { background: #174a7e; color: white; }
+        .message { margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <h1>Campus Club Profile</h1>
+    <p>Manage campus clubs using our Node.js REST API.</p>
+
+    <form id="clubForm">
+        <h2 id="formTitle">Register a Club</h2>
+
+        <input type="hidden" id="clubId">
+
+        <label for="name">Club Name *</label>
+        <input id="name" required>
+
+        <label for="category">Category *</label>
+        <input id="category" required>
+
+        <label for="description">Description</label>
+        <textarea id="description"></textarea>
+
+        <label for="president">President</label>
+        <input id="president">
+
+        <label for="email">Email</label>
+        <input id="email" type="email">
+
+        <label for="meeting_day">Meeting Day</label>
+        <input id="meeting_day">
+
+        <button type="submit">Save Club</button>
+        <button type="button" id="cancelEdit">Cancel Edit</button>
+    </form>
+
+    <p id="message" class="message"></p>
+
+    <div class="table-container">
+        <h2>Registered Clubs</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>President</th>
+                    <th>Email</th>
+                    <th>Meeting Day</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="clubsTable"></tbody>
+        </table>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

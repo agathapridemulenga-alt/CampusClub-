@@ -1,0 +1,14 @@
+# Dependencies
+node_modules/
+
+# Secret configuration
+.env
+.env.*
+
+# Local database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs
+npm-debug.log*
